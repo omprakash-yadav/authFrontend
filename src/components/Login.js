@@ -10,9 +10,10 @@ function Login() {
   let [password, setPassword] = useState("");
   let [passwordMatch, setMatch] = useState("");
   let role = 2;
-
+  //let basUrl="http://localhost:4000/users"
+  let basUrl = "https://auth-stack.herokuapp.com/users";
   let handleSubmit = async () => {
-    let res = await axios.post("http://localhost:4000/users/login", {
+    let res = await axios.post(`${basUrl}/login`, {
       email,
       password,
       role,
@@ -20,7 +21,7 @@ function Login() {
     //console.log(res);
     if (res.data.statusCode === 200) {
       sessionStorage.setItem("token", res.data.token);
-      sessionStorage.setItem("firstName",res.data.firstName)
+      sessionStorage.setItem("firstName", res.data.firstName);
       navigate("/dashboard");
     }
   };
