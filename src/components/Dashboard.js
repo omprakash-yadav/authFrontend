@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Dashboard() {
   let navigate = useNavigate();
   let name = sessionStorage.getItem("firstName");
@@ -42,16 +42,18 @@ function Dashboard() {
   return (
     <>
       <div style={{ textAlign: "center" }}>
-        <h1>{name} you are Authentikated</h1>
+        <h1>{name} Welcome to Your Profile</h1>
       </div>
+      <Link to="/profile">
       <button
-        style={{ color: "white", background: "blue" }}
+        style={{ color: "white", background: "blue",width:"100px",height:"50px",borderRadius:"5px",marginLeft:"550px",marginTop:"50px" }}
         onClick={() => checkAuth()}
       >
-        Test Auth
+        profile
       </button>
+      </Link>
       <button
-        style={{ color: "white", background: "blue" }}
+        style={{ color: "white", background: "blue" ,width:"100px",height:"50px",borderRadius:"5px" ,marginLeft:'20px'}}
         onClick={() => Logout()}
       >
         Logout

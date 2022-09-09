@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   let navigate = useNavigate();
@@ -66,6 +66,9 @@ function Login() {
           ) : (
             <></>
           )}
+          <Link to="/signup">
+            <Button style={{marginLeft:"10px"}}>signup</Button>
+          </Link>
         </div>
       </Form>
     </div>
