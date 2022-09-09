@@ -26,8 +26,7 @@ function SignUp() {
   let baseUrl = "https://auth-stack.herokuapp.com/users";
   //let baseUrl="http://localhost:4000/users"
   let handleSubmit = async () => {
-    //console.log({ firstName, lastName, email, mobile, password, role });
-    // console.log(axios.defaults.baseURL);
+    
     let res = await axios.post(`${baseUrl}/signup`, {
       firstName,
       lastName,
